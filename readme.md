@@ -37,8 +37,8 @@ With modern [ECMAScript modules](https://nodejs.org/api/esm.html):
 import ndjson from 'ndjson'
 import fs from 'fs'
 
-for await (const line of fs.createReadStream('data.txt').pipe(ndjson.parse())) {
-  console.log(line)
+for await (const obj of fs.createReadStream('data.txt').pipe(ndjson.parse())) {
+  // obj is a javascript object
 }
 ```
 
