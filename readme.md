@@ -31,6 +31,16 @@ fs.createReadStream('data.txt')
   })
 ```
 
+With modern [ECMAScript modules](https://nodejs.org/api/esm.html):
+
+```js
+import ndjson from 'ndjson'
+import fs from 'fs'
+
+for await (const line of fs.createReadStream('data.txt').pipe(ndjson.parse())) {
+  console.log(line)
+}
+```
 
 ##### Options
 
